@@ -1,0 +1,48 @@
+{
+  "name": "@nascent-tech/memless",
+  "version": "0.4.0",
+  "description": "Node.js bridge to the memless C ABI through koffi, without a native addon.",
+  "type": "commonjs",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "default": "./src/index.js"
+    },
+    "./src/library": "./src/library.js",
+    "./src/kind": "./src/kind.js",
+    "./src/cell-value": "./src/cell-value.js",
+    "./src/columns": "./src/columns.js",
+    "./src/ensure-ok": "./src/ensure-ok.js",
+    "./src/message": "./src/message.js"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/nascent-tech/memless/tree/main/bindings/node#readme",
+  "bugs": {
+    "url": "https://github.com/nascent-tech/memless/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nascent-tech/memless.git",
+    "directory": "bindings/node"
+  },
+  "files": [
+    "src",
+    "lib"
+  ],
+  "preferUnplugged": true,
+  "scripts": {
+    "test": "node --test",
+    "typecheck": "tsc --noEmit --strict --moduleResolution node --module commonjs --target es2020 tests/types-check.ts"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "koffi": "^2.16.3"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
